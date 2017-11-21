@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "motor_brazo",
+					"strict" : false
+				},
+				{
+					"name" : "motor_garra",
+					"strict" : false
+				},
+				{
+					"name" : "motor_giro",
+					"strict" : false
+				},
+				{
+					"name" : "motor_banda",
+					"strict" : false
+				},
+				{
+					"name" : "led_banda",
+					"strict" : false
+				},
+				{
+					"name" : "led_brazo",
+					"strict" : false
+				},
+				{
+					"name" : "led_stop",
+					"strict" : false
+				},
+				{
+					"name" : "led1",
+					"strict" : false
+				},
+				{
+					"name" : "led2",
+					"strict" : false
+				},
+				{
+					"name" : "salida_usb",
+					"strict" : false
+				},
+				{
+					"name" : "actual_estado[0]",
+					"strict" : false
+				},
+				{
+					"name" : "actual_estado[1]",
+					"strict" : false
+				},
+				{
+					"name" : "actual_estado[2]",
+					"strict" : false
+				},
+				{
+					"name" : "actual_estado[3]",
+					"strict" : false
+				},
+				{
+					"name" : "actual_estado[4]",
+					"strict" : false
+				},
+				{
+					"name" : "not_s1",
+					"strict" : false
+				},
+				{
+					"name" : "not_s2",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "s5",
+					"strict" : false
+				},
+				{
+					"name" : "s3",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "SC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "entrada_usb",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,711 @@
+Analysis & Synthesis report for ProyectoFinalCasiquenoEsteSi
+Mon Nov 20 23:22:48 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ProyectoFinalCasiquenoEsteSi|usart_t:us_envio|CS
+  9. State Machine - |ProyectoFinalCasiquenoEsteSi|USART:US|repartidor:rep|CS
+ 10. State Machine - |ProyectoFinalCasiquenoEsteSi|Maquina:MAQ|CS
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |ProyectoFinalCasiquenoEsteSi
+ 16. Parameter Settings for User Entity Instance: preescalar_reloj:PRES
+ 17. Parameter Settings for User Entity Instance: contador:CONTADORENCIUN
+ 18. Parameter Settings for User Entity Instance: PWM:PWMBANDA
+ 19. Parameter Settings for User Entity Instance: PWM:PWMBRAZO
+ 20. Parameter Settings for User Entity Instance: PWM:PWMGARRA
+ 21. Parameter Settings for User Entity Instance: PWM:PWMGIRO
+ 22. Parameter Settings for User Entity Instance: Maquina:MAQ
+ 23. Parameter Settings for User Entity Instance: USART:US|guarda_reparticion:guarda
+ 24. Port Connectivity Checks: "USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:11:nombre_Generico"
+ 25. Port Connectivity Checks: "Maquina:MAQ"
+ 26. Port Connectivity Checks: "PWM:PWMGIRO"
+ 27. Port Connectivity Checks: "PWM:PWMGARRA"
+ 28. Port Connectivity Checks: "PWM:PWMBRAZO"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Nov 20 23:22:48 2017       ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                      ; ProyectoFinalCasiquenoEsteSi                ;
+; Top-level Entity Name              ; ProyectoFinalCasiquenoEsteSi                ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 378                                         ;
+;     Total combinational functions  ; 339                                         ;
+;     Dedicated logic registers      ; 147                                         ;
+; Total registers                    ; 147                                         ;
+; Total pins                         ; 25                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                            ;
++----------------------------------------------------------------------------+------------------------------+------------------------------+
+; Option                                                                     ; Setting                      ; Default Value                ;
++----------------------------------------------------------------------------+------------------------------+------------------------------+
+; Device                                                                     ; EP4CE22F17C6                 ;                              ;
+; Top-level entity name                                                      ; ProyectoFinalCasiquenoEsteSi ; ProyectoFinalCasiquenoEsteSi ;
+; Family name                                                                ; Cyclone IV E                 ; Cyclone V                    ;
+; Use smart compilation                                                      ; Off                          ; Off                          ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                           ; On                           ;
+; Enable compact report table                                                ; Off                          ; Off                          ;
+; Restructure Multiplexers                                                   ; Auto                         ; Auto                         ;
+; Create Debugging Nodes for IP Cores                                        ; Off                          ; Off                          ;
+; Preserve fewer node names                                                  ; On                           ; On                           ;
+; OpenCore Plus hardware evaluation                                          ; Enable                       ; Enable                       ;
+; Verilog Version                                                            ; Verilog_2001                 ; Verilog_2001                 ;
+; VHDL Version                                                               ; VHDL_1993                    ; VHDL_1993                    ;
+; State Machine Processing                                                   ; Auto                         ; Auto                         ;
+; Safe State Machine                                                         ; Off                          ; Off                          ;
+; Extract Verilog State Machines                                             ; On                           ; On                           ;
+; Extract VHDL State Machines                                                ; On                           ; On                           ;
+; Ignore Verilog initial constructs                                          ; Off                          ; Off                          ;
+; Iteration limit for constant Verilog loops                                 ; 5000                         ; 5000                         ;
+; Iteration limit for non-constant Verilog loops                             ; 250                          ; 250                          ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                           ; On                           ;
+; Infer RAMs from Raw Logic                                                  ; On                           ; On                           ;
+; Parallel Synthesis                                                         ; On                           ; On                           ;
+; DSP Block Balancing                                                        ; Auto                         ; Auto                         ;
+; NOT Gate Push-Back                                                         ; On                           ; On                           ;
+; Power-Up Don't Care                                                        ; On                           ; On                           ;
+; Remove Redundant Logic Cells                                               ; Off                          ; Off                          ;
+; Remove Duplicate Registers                                                 ; On                           ; On                           ;
+; Ignore CARRY Buffers                                                       ; Off                          ; Off                          ;
+; Ignore CASCADE Buffers                                                     ; Off                          ; Off                          ;
+; Ignore GLOBAL Buffers                                                      ; Off                          ; Off                          ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                          ; Off                          ;
+; Ignore LCELL Buffers                                                       ; Off                          ; Off                          ;
+; Ignore SOFT Buffers                                                        ; On                           ; On                           ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                          ; Off                          ;
+; Optimization Technique                                                     ; Balanced                     ; Balanced                     ;
+; Carry Chain Length                                                         ; 70                           ; 70                           ;
+; Auto Carry Chains                                                          ; On                           ; On                           ;
+; Auto Open-Drain Pins                                                       ; On                           ; On                           ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                          ; Off                          ;
+; Auto ROM Replacement                                                       ; On                           ; On                           ;
+; Auto RAM Replacement                                                       ; On                           ; On                           ;
+; Auto DSP Block Replacement                                                 ; On                           ; On                           ;
+; Auto Shift Register Replacement                                            ; Auto                         ; Auto                         ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                         ; Auto                         ;
+; Auto Clock Enable Replacement                                              ; On                           ; On                           ;
+; Strict RAM Replacement                                                     ; Off                          ; Off                          ;
+; Allow Synchronous Control Signals                                          ; On                           ; On                           ;
+; Force Use of Synchronous Clear Signals                                     ; Off                          ; Off                          ;
+; Auto RAM Block Balancing                                                   ; On                           ; On                           ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                          ; Off                          ;
+; Auto Resource Sharing                                                      ; Off                          ; Off                          ;
+; Allow Any RAM Size For Recognition                                         ; Off                          ; Off                          ;
+; Allow Any ROM Size For Recognition                                         ; Off                          ; Off                          ;
+; Allow Any Shift Register Size For Recognition                              ; Off                          ; Off                          ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                           ; On                           ;
+; Ignore translate_off and synthesis_off directives                          ; Off                          ; Off                          ;
+; Timing-Driven Synthesis                                                    ; On                           ; On                           ;
+; Report Parameter Settings                                                  ; On                           ; On                           ;
+; Report Source Assignments                                                  ; On                           ; On                           ;
+; Report Connectivity Checks                                                 ; On                           ; On                           ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                          ; Off                          ;
+; Synchronization Register Chain Length                                      ; 2                            ; 2                            ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation           ; Normal compilation           ;
+; HDL message level                                                          ; Level2                       ; Level2                       ;
+; Suppress Register Optimization Related Messages                            ; Off                          ; Off                          ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                         ; 5000                         ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                         ; 5000                         ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                          ; 100                          ;
+; Clock MUX Protection                                                       ; On                           ; On                           ;
+; Auto Gated Clock Conversion                                                ; Off                          ; Off                          ;
+; Block Design Naming                                                        ; Auto                         ; Auto                         ;
+; SDC constraint protection                                                  ; Off                          ; Off                          ;
+; Synthesis Effort                                                           ; Auto                         ; Auto                         ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                           ; On                           ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                          ; Off                          ;
+; Analysis & Synthesis Message Level                                         ; Medium                       ; Medium                       ;
+; Disable Register Merging Across Hierarchies                                ; Auto                         ; Auto                         ;
+; Resource Aware Inference For Block RAM                                     ; On                           ; On                           ;
++----------------------------------------------------------------------------+------------------------------+------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                  ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------+---------+
+; usart_t.vhd                      ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/usart_t.vhd                      ;         ;
+; suma.vhd                         ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/suma.vhd                         ;         ;
+; usart_pkg.vhd                    ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/usart_pkg.vhd                    ;         ;
+; USART.vhd                        ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/USART.vhd                        ;         ;
+; repartidor.vhd                   ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/repartidor.vhd                   ;         ;
+; reg1bit.vhd                      ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/reg1bit.vhd                      ;         ;
+; habilitador.vhd                  ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/habilitador.vhd                  ;         ;
+; guarda_reparticion.vhd           ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/guarda_reparticion.vhd           ;         ;
+; corrimiento_registros.vhd        ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/corrimiento_registros.vhd        ;         ;
+; contadorUSART.vhd                ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/contadorUSART.vhd                ;         ;
+; PWM.vhd                          ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/PWM.vhd                          ;         ;
+; ProyectoFinalCasiquenoEsteSi.vhd ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd ;         ;
+; Maquina.vhd                      ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/Maquina.vhd                      ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/contador.vhd                     ;         ;
+; componentes_pkg.vhd              ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/componentes_pkg.vhd              ;         ;
+; preescalar_reloj.vhd             ; yes             ; User VHDL File  ; /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/preescalar_reloj.vhd             ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 378           ;
+;                                             ;               ;
+; Total combinational functions               ; 339           ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 174           ;
+;     -- 3 input functions                    ; 59            ;
+;     -- <=2 input functions                  ; 106           ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 262           ;
+;     -- arithmetic mode                      ; 77            ;
+;                                             ;               ;
+; Total registers                             ; 147           ;
+;     -- Dedicated logic registers            ; 147           ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 25            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; reset_n~input ;
+; Maximum fan-out                             ; 147           ;
+; Total fan-out                               ; 1644          ;
+; Average fan-out                             ; 3.07          ;
++---------------------------------------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                              ;
++---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                       ; Entity Name                  ; Library Name ;
++---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+; |ProyectoFinalCasiquenoEsteSi               ; 339 (10)            ; 147 (6)                   ; 0           ; 0            ; 0       ; 0         ; 25   ; 0            ; |ProyectoFinalCasiquenoEsteSi                                                                             ; ProyectoFinalCasiquenoEsteSi ; work         ;
+;    |Maquina:MAQ|                            ; 90 (90)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|Maquina:MAQ                                                                 ; Maquina                      ; work         ;
+;    |PWM:PWMBANDA|                           ; 23 (23)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|PWM:PWMBANDA                                                                ; PWM                          ; work         ;
+;    |PWM:PWMBRAZO|                           ; 38 (38)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|PWM:PWMBRAZO                                                                ; PWM                          ; work         ;
+;    |PWM:PWMGARRA|                           ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|PWM:PWMGARRA                                                                ; PWM                          ; work         ;
+;    |PWM:PWMGIRO|                            ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|PWM:PWMGIRO                                                                 ; PWM                          ; work         ;
+;    |USART:US|                               ; 66 (2)              ; 54 (8)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US                                                                    ; USART                        ; work         ;
+;       |contadorUSART:con|                   ; 27 (27)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|contadorUSART:con                                                  ; contadorUSART                ; work         ;
+;       |corrimiento_registros:corrimiento|   ; 3 (3)               ; 10 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento                                  ; corrimiento_registros        ; work         ;
+;          |reg1bit:\regs:10:nombre_Generico| ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:10:nombre_Generico ; reg1bit                      ; work         ;
+;          |reg1bit:\regs:1:nombre_Generico|  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:1:nombre_Generico  ; reg1bit                      ; work         ;
+;          |reg1bit:\regs:2:nombre_Generico|  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:2:nombre_Generico  ; reg1bit                      ; work         ;
+;          |reg1bit:\regs:3:nombre_Generico|  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:3:nombre_Generico  ; reg1bit                      ; work         ;
+;          |reg1bit:\regs:4:nombre_Generico|  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:4:nombre_Generico  ; reg1bit                      ; work         ;
+;          |reg1bit:\regs:5:nombre_Generico|  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:5:nombre_Generico  ; reg1bit                      ; work         ;
+;          |reg1bit:\regs:6:nombre_Generico|  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:6:nombre_Generico  ; reg1bit                      ; work         ;
+;          |reg1bit:\regs:7:nombre_Generico|  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:7:nombre_Generico  ; reg1bit                      ; work         ;
+;          |reg1bit:\regs:8:nombre_Generico|  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:8:nombre_Generico  ; reg1bit                      ; work         ;
+;          |reg1bit:\regs:9:nombre_Generico|  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:9:nombre_Generico  ; reg1bit                      ; work         ;
+;       |guarda_reparticion:guarda|           ; 7 (7)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|guarda_reparticion:guarda                                          ; guarda_reparticion           ; work         ;
+;       |habilitador:habi|                    ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|habilitador:habi                                                   ; habilitador                  ; work         ;
+;       |repartidor:rep|                      ; 25 (25)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|USART:US|repartidor:rep                                                     ; repartidor                   ; work         ;
+;    |contador:CONTADORENCIUN|                ; 59 (59)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|contador:CONTADORENCIUN                                                     ; contador                     ; work         ;
+;    |preescalar_reloj:PRES|                  ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|preescalar_reloj:PRES                                                       ; preescalar_reloj             ; work         ;
+;    |usart_t:us_envio|                       ; 25 (9)              ; 21 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|usart_t:us_envio                                                            ; usart_t                      ; work         ;
+;       |suma:sum|                            ; 16 (16)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProyectoFinalCasiquenoEsteSi|usart_t:us_envio|suma:sum                                                   ; suma                         ; work         ;
++---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |ProyectoFinalCasiquenoEsteSi|usart_t:us_envio|CS                                        ;
++--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; Name   ; CS.e11 ; CS.e10 ; CS.e9 ; CS.e8 ; CS.e7 ; CS.e6 ; CS.e5 ; CS.e4 ; CS.e3 ; CS.e2 ; CS.e1 ; CS.e0 ;
++--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; CS.e0  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
+; CS.e1  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
+; CS.e2  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
+; CS.e3  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
+; CS.e4  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
+; CS.e5  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.e6  ; 0      ; 0      ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.e7  ; 0      ; 0      ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.e8  ; 0      ; 0      ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.e9  ; 0      ; 0      ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.e10 ; 0      ; 1      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.e11 ; 1      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
++--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------+
+; State Machine - |ProyectoFinalCasiquenoEsteSi|USART:US|repartidor:rep|CS                         ;
++--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; Name   ; CS.E12 ; CS.E10 ; CS.E9 ; CS.E8 ; CS.E7 ; CS.E6 ; CS.E5 ; CS.E4 ; CS.E3 ; CS.E2 ; CS.E1 ;
++--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; CS.E1  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
+; CS.E2  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
+; CS.E3  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
+; CS.E4  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
+; CS.E5  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E6  ; 0      ; 0      ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E7  ; 0      ; 0      ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E8  ; 0      ; 0      ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E9  ; 0      ; 0      ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E10 ; 0      ; 1      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E12 ; 1      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
++--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ProyectoFinalCasiquenoEsteSi|Maquina:MAQ|CS                                                                                                  ;
++---------------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+---------------+-------+----------+-------+
+; Name          ; CS.E15 ; CS.E13 ; CS.E12 ; CS.E11 ; CS.E10 ; CS.E9 ; CS.E8 ; CS.E7 ; CS.E6 ; CS.E5 ; CS.E4 ; CS.E3 ; CS.PARA_BANDA ; CS.E2 ; CS.E_INT ; CS.E1 ;
++---------------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+---------------+-------+----------+-------+
+; CS.E1         ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0             ; 0     ; 0        ; 0     ;
+; CS.E_INT      ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0             ; 0     ; 1        ; 1     ;
+; CS.E2         ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0             ; 1     ; 0        ; 1     ;
+; CS.PARA_BANDA ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1             ; 0     ; 0        ; 1     ;
+; CS.E3         ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E4         ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E5         ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E6         ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E7         ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E8         ; 0      ; 0      ; 0      ; 0      ; 0      ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E9         ; 0      ; 0      ; 0      ; 0      ; 0      ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E10        ; 0      ; 0      ; 0      ; 0      ; 1      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E11        ; 0      ; 0      ; 0      ; 1      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E12        ; 0      ; 0      ; 1      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E13        ; 0      ; 1      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0             ; 0     ; 0        ; 1     ;
+; CS.E15        ; 1      ; 0      ; 0      ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0             ; 0     ; 0        ; 1     ;
++---------------+--------+--------+--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+---------------+-------+----------+-------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; valor_num_caja[3,6,7]                  ; Stuck at GND due to stuck port data_in ;
+; PWM:PWMGARRA|Q2[15]                    ; Merged with PWM:PWMBRAZO|Q2[15]        ;
+; PWM:PWMGIRO|Q2[15]                     ; Merged with PWM:PWMBRAZO|Q2[15]        ;
+; PWM:PWMGARRA|Q2[14]                    ; Merged with PWM:PWMBRAZO|Q2[14]        ;
+; PWM:PWMGIRO|Q2[14]                     ; Merged with PWM:PWMBRAZO|Q2[14]        ;
+; PWM:PWMGARRA|Q2[13]                    ; Merged with PWM:PWMBRAZO|Q2[13]        ;
+; PWM:PWMGIRO|Q2[13]                     ; Merged with PWM:PWMBRAZO|Q2[13]        ;
+; PWM:PWMGARRA|Q2[12]                    ; Merged with PWM:PWMBRAZO|Q2[12]        ;
+; PWM:PWMGIRO|Q2[12]                     ; Merged with PWM:PWMBRAZO|Q2[12]        ;
+; PWM:PWMGARRA|Q2[11]                    ; Merged with PWM:PWMBRAZO|Q2[11]        ;
+; PWM:PWMGIRO|Q2[11]                     ; Merged with PWM:PWMBRAZO|Q2[11]        ;
+; PWM:PWMGARRA|Q2[10]                    ; Merged with PWM:PWMBRAZO|Q2[10]        ;
+; PWM:PWMGIRO|Q2[10]                     ; Merged with PWM:PWMBRAZO|Q2[10]        ;
+; PWM:PWMGARRA|Q2[9]                     ; Merged with PWM:PWMBRAZO|Q2[9]         ;
+; PWM:PWMGIRO|Q2[9]                      ; Merged with PWM:PWMBRAZO|Q2[9]         ;
+; PWM:PWMGARRA|Q2[8]                     ; Merged with PWM:PWMBRAZO|Q2[8]         ;
+; PWM:PWMGIRO|Q2[8]                      ; Merged with PWM:PWMBRAZO|Q2[8]         ;
+; PWM:PWMGARRA|Q2[7]                     ; Merged with PWM:PWMBRAZO|Q2[7]         ;
+; PWM:PWMGIRO|Q2[7]                      ; Merged with PWM:PWMBRAZO|Q2[7]         ;
+; PWM:PWMGARRA|Q2[6]                     ; Merged with PWM:PWMBRAZO|Q2[6]         ;
+; PWM:PWMGIRO|Q2[6]                      ; Merged with PWM:PWMBRAZO|Q2[6]         ;
+; PWM:PWMGARRA|Q2[5]                     ; Merged with PWM:PWMBRAZO|Q2[5]         ;
+; PWM:PWMGIRO|Q2[5]                      ; Merged with PWM:PWMBRAZO|Q2[5]         ;
+; PWM:PWMGARRA|Q2[4]                     ; Merged with PWM:PWMBRAZO|Q2[4]         ;
+; PWM:PWMGIRO|Q2[4]                      ; Merged with PWM:PWMBRAZO|Q2[4]         ;
+; PWM:PWMGARRA|Q2[3]                     ; Merged with PWM:PWMBRAZO|Q2[3]         ;
+; PWM:PWMGIRO|Q2[3]                      ; Merged with PWM:PWMBRAZO|Q2[3]         ;
+; PWM:PWMGARRA|Q2[2]                     ; Merged with PWM:PWMBRAZO|Q2[2]         ;
+; PWM:PWMGIRO|Q2[2]                      ; Merged with PWM:PWMBRAZO|Q2[2]         ;
+; PWM:PWMGARRA|Q2[1]                     ; Merged with PWM:PWMBRAZO|Q2[1]         ;
+; PWM:PWMGIRO|Q2[1]                      ; Merged with PWM:PWMBRAZO|Q2[1]         ;
+; PWM:PWMGARRA|Q2[0]                     ; Merged with PWM:PWMBRAZO|Q2[0]         ;
+; PWM:PWMGIRO|Q2[0]                      ; Merged with PWM:PWMBRAZO|Q2[0]         ;
+; valor_num_caja[5]                      ; Merged with valor_num_caja[4]          ;
+; Total Number of Removed Registers = 36 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 147   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 147   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 93    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Inverted Register Statistics                               ;
++--------------------------------------------------+---------+
+; Inverted Register                                ; Fan out ;
++--------------------------------------------------+---------+
+; USART:US|guarda_reparticion:guarda|ACTUALB3[1]   ; 6       ;
+; USART:US|guarda_reparticion:guarda|ACTUALB3[0]   ; 8       ;
+; USART:US|guarda_reparticion:guarda|ACTUALB1[0]   ; 10      ;
+; USART:US|guarda_reparticion:guarda|ACTUALB2[1]   ; 8       ;
+; USART:US|guarda_reparticion:guarda|ACTUAL_PWM[0] ; 7       ;
+; USART:US|guarda_reparticion:guarda|ACTUAL_PWM[2] ; 4       ;
+; Total number of inverted registers = 6           ;         ;
++--------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |ProyectoFinalCasiquenoEsteSi|USART:US|repartidor:rep|NS ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |ProyectoFinalCasiquenoEsteSi|Maquina:MAQ|Selector18     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ProyectoFinalCasiquenoEsteSi ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; DATA_CUENTA    ; 23    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: preescalar_reloj:PRES ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; data_width     ; 4     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: contador:CONTADORENCIUN ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; data_width     ; 23    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PWM:PWMBANDA ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; sum_width      ; 7     ; Signed Integer                   ;
+; contador       ; 125   ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PWM:PWMBRAZO ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; sum_width      ; 16    ; Signed Integer                   ;
+; contador       ; 62500 ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PWM:PWMGARRA ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; sum_width      ; 16    ; Signed Integer                   ;
+; contador       ; 62500 ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PWM:PWMGIRO ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; sum_width      ; 16    ; Signed Integer                  ;
+; contador       ; 62500 ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Maquina:MAQ ;
++----------------+---------+-------------------------------+
+; Parameter Name ; Value   ; Type                          ;
++----------------+---------+-------------------------------+
+; ban            ; 2755    ; Signed Integer                ;
+; dep            ; 7178    ; Signed Integer                ;
+; abrir          ; 5230    ; Signed Integer                ;
+; cerrado        ; 5977    ; Signed Integer                ;
+; norm           ; 3800    ; Signed Integer                ;
+; seg1           ; 3125000 ; Signed Integer                ;
+; seg2           ; 6250000 ; Signed Integer                ;
++----------------+---------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: USART:US|guarda_reparticion:guarda ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; inicialb1      ; 1     ; Signed Integer                                         ;
+; inicialb2      ; 2     ; Signed Integer                                         ;
+; inicialb3      ; 3     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:11:nombre_Generico"        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "Maquina:MAQ"      ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; b1[15..13] ; Input ; Info     ; Stuck at GND ;
+; b1[5]      ; Input ; Info     ; Stuck at GND ;
+; b2[15..13] ; Input ; Info     ; Stuck at GND ;
+; b2[5]      ; Input ; Info     ; Stuck at GND ;
+; b3[15..13] ; Input ; Info     ; Stuck at GND ;
+; b3[5]      ; Input ; Info     ; Stuck at GND ;
+; b4[11..8]  ; Input ; Info     ; Stuck at VCC ;
+; b4[15..12] ; Input ; Info     ; Stuck at GND ;
+; b4[7..4]   ; Input ; Info     ; Stuck at GND ;
+; b4[3]      ; Input ; Info     ; Stuck at VCC ;
+; b4[2]      ; Input ; Info     ; Stuck at GND ;
+; b4[1]      ; Input ; Info     ; Stuck at VCC ;
+; b4[0]      ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "PWM:PWMGIRO"  ;
++--------+-------+----------+--------------+
+; Port   ; Type  ; Severity ; Details      ;
++--------+-------+----------+--------------+
+; enable ; Input ; Info     ; Stuck at VCC ;
++--------+-------+----------+--------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "PWM:PWMGARRA" ;
++--------+-------+----------+--------------+
+; Port   ; Type  ; Severity ; Details      ;
++--------+-------+----------+--------------+
+; enable ; Input ; Info     ; Stuck at VCC ;
++--------+-------+----------+--------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "PWM:PWMBRAZO" ;
++--------+-------+----------+--------------+
+; Port   ; Type  ; Severity ; Details      ;
++--------+-------+----------+--------------+
+; enable ; Input ; Info     ; Stuck at VCC ;
++--------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 25                          ;
+; cycloneiii_ff         ; 147                         ;
+;     CLR               ; 54                          ;
+;     ENA CLR           ; 93                          ;
+; cycloneiii_lcell_comb ; 346                         ;
+;     arith             ; 77                          ;
+;         2 data inputs ; 62                          ;
+;         3 data inputs ; 15                          ;
+;     normal            ; 269                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 44                          ;
+;         4 data inputs ; 174                         ;
+;                       ;                             ;
+; Max LUT depth         ; 9.70                        ;
+; Average LUT depth     ; 5.52                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Mon Nov 20 23:21:47 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProyectoFinalCasiquenoEsteSi -c ProyectoFinalCasiquenoEsteSi
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
+Warning (20031): Parallel compilation is enabled for 4 processors, but there are only 2 processors in the system. Runtime may increase due to over usage of the processor space.
+Info (12021): Found 2 design units, including 1 entities, in source file usart_t.vhd
+    Info (12022): Found design unit 1: usart_t-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/usart_t.vhd Line: 16
+    Info (12023): Found entity 1: usart_t File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/usart_t.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file suma.vhd
+    Info (12022): Found design unit 1: suma-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/suma.vhd Line: 14
+    Info (12023): Found entity 1: suma File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/suma.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file usart_pkg.vhd
+    Info (12022): Found design unit 1: usart_pkg File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/usart_pkg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file USART.vhd
+    Info (12022): Found design unit 1: USART-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/USART.vhd Line: 18
+    Info (12023): Found entity 1: USART File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/USART.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file repartidor.vhd
+    Info (12022): Found design unit 1: repartidor-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/repartidor.vhd Line: 20
+    Info (12023): Found entity 1: repartidor File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/repartidor.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file reg1bit.vhd
+    Info (12022): Found design unit 1: reg1bit-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/reg1bit.vhd Line: 19
+    Info (12023): Found entity 1: reg1bit File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/reg1bit.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file habilitador.vhd
+    Info (12022): Found design unit 1: habilitador-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/habilitador.vhd Line: 15
+    Info (12023): Found entity 1: habilitador File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/habilitador.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file guarda_reparticion.vhd
+    Info (12022): Found design unit 1: guarda_reparticion-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/guarda_reparticion.vhd Line: 23
+    Info (12023): Found entity 1: guarda_reparticion File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/guarda_reparticion.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file corrimiento_registros.vhd
+    Info (12022): Found design unit 1: corrimiento_registros-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/corrimiento_registros.vhd Line: 17
+    Info (12023): Found entity 1: corrimiento_registros File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/corrimiento_registros.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file contadorUSART.vhd
+    Info (12022): Found design unit 1: contadorUSART-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/contadorUSART.vhd Line: 15
+    Info (12023): Found entity 1: contadorUSART File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/contadorUSART.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file PWM.vhd
+    Info (12022): Found design unit 1: PWM-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/PWM.vhd Line: 17
+    Info (12023): Found entity 1: PWM File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/PWM.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ProyectoFinalCasiquenoEsteSi.vhd
+    Info (12022): Found design unit 1: ProyectoFinalCasiquenoEsteSi-inicial File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd Line: 21
+    Info (12023): Found entity 1: ProyectoFinalCasiquenoEsteSi File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file Maquina.vhd
+    Info (12022): Found design unit 1: Maquina-arq File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/Maquina.vhd Line: 37
+    Info (12023): Found entity 1: Maquina File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/Maquina.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
+    Info (12022): Found design unit 1: contador-arc File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/contador.vhd Line: 16
+    Info (12023): Found entity 1: contador File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/contador.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file componentes_pkg.vhd
+    Info (12022): Found design unit 1: componentes_pkg File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/componentes_pkg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file preescalar_reloj.vhd
+    Info (12022): Found design unit 1: preescalar_reloj-rtl File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/preescalar_reloj.vhd Line: 18
+    Info (12023): Found entity 1: preescalar_reloj File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/preescalar_reloj.vhd Line: 8
+Info (12127): Elaborating entity "ProyectoFinalCasiquenoEsteSi" for the top level hierarchy
+Info (12128): Elaborating entity "preescalar_reloj" for hierarchy "preescalar_reloj:PRES" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd Line: 53
+Info (12128): Elaborating entity "contador" for hierarchy "contador:CONTADORENCIUN" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd Line: 64
+Info (12128): Elaborating entity "PWM" for hierarchy "PWM:PWMBANDA" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd Line: 75
+Info (12128): Elaborating entity "PWM" for hierarchy "PWM:PWMBRAZO" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd Line: 91
+Info (12128): Elaborating entity "Maquina" for hierarchy "Maquina:MAQ" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at Maquina.vhd(196): signal "valor_num_caja" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/Maquina.vhd Line: 196
+Warning (10492): VHDL Process Statement warning at Maquina.vhd(436): signal "valor_num_caja" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/Maquina.vhd Line: 436
+Info (12128): Elaborating entity "USART" for hierarchy "USART:US" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd Line: 173
+Info (12128): Elaborating entity "habilitador" for hierarchy "USART:US|habilitador:habi" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/USART.vhd Line: 35
+Info (12128): Elaborating entity "contadorUSART" for hierarchy "USART:US|contadorUSART:con" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/USART.vhd Line: 44
+Info (12128): Elaborating entity "corrimiento_registros" for hierarchy "USART:US|corrimiento_registros:corrimiento" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/USART.vhd Line: 53
+Info (12128): Elaborating entity "reg1bit" for hierarchy "USART:US|corrimiento_registros:corrimiento|reg1bit:\regs:1:nombre_Generico" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/corrimiento_registros.vhd Line: 27
+Info (12128): Elaborating entity "repartidor" for hierarchy "USART:US|repartidor:rep" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/USART.vhd Line: 67
+Info (12128): Elaborating entity "guarda_reparticion" for hierarchy "USART:US|guarda_reparticion:guarda" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/USART.vhd Line: 87
+Info (12128): Elaborating entity "usart_t" for hierarchy "usart_t:us_envio" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd Line: 185
+Info (12128): Elaborating entity "suma" for hierarchy "usart_t:us_envio|suma:sum" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/usart_t.vhd Line: 190
+Info (13000): Registers with preset signals will power-up high File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/guarda_reparticion.vhd Line: 27
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "x" File: /home/ciro/Documents/universidad/semestre5/logicos/Laboratorios/ProyectoFinalCasiquenoEsteSi/ProyectoFinalCasiquenoEsteSi.vhd Line: 14
+Info (21057): Implemented 421 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 396 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 1008 megabytes
+    Info: Processing ended: Mon Nov 20 23:22:48 2017
+    Info: Elapsed time: 00:01:01
+    Info: Total CPU time (on all processors): 00:00:56
+
+

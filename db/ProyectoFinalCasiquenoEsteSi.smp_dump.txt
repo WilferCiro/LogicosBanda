@@ -1,0 +1,48 @@
+
+State Machine - |ProyectoFinalCasiquenoEsteSi|usart_t:us_envio|CS
+Name CS.e11 CS.e10 CS.e9 CS.e8 CS.e7 CS.e6 CS.e5 CS.e4 CS.e3 CS.e2 CS.e1 CS.e0 
+CS.e0 0 0 0 0 0 0 0 0 0 0 0 0 
+CS.e1 0 0 0 0 0 0 0 0 0 0 1 1 
+CS.e2 0 0 0 0 0 0 0 0 0 1 0 1 
+CS.e3 0 0 0 0 0 0 0 0 1 0 0 1 
+CS.e4 0 0 0 0 0 0 0 1 0 0 0 1 
+CS.e5 0 0 0 0 0 0 1 0 0 0 0 1 
+CS.e6 0 0 0 0 0 1 0 0 0 0 0 1 
+CS.e7 0 0 0 0 1 0 0 0 0 0 0 1 
+CS.e8 0 0 0 1 0 0 0 0 0 0 0 1 
+CS.e9 0 0 1 0 0 0 0 0 0 0 0 1 
+CS.e10 0 1 0 0 0 0 0 0 0 0 0 1 
+CS.e11 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |ProyectoFinalCasiquenoEsteSi|USART:US|repartidor:rep|CS
+Name CS.E12 CS.E10 CS.E9 CS.E8 CS.E7 CS.E6 CS.E5 CS.E4 CS.E3 CS.E2 CS.E1 
+CS.E1 0 0 0 0 0 0 0 0 0 0 0 
+CS.E2 0 0 0 0 0 0 0 0 0 1 1 
+CS.E3 0 0 0 0 0 0 0 0 1 0 1 
+CS.E4 0 0 0 0 0 0 0 1 0 0 1 
+CS.E5 0 0 0 0 0 0 1 0 0 0 1 
+CS.E6 0 0 0 0 0 1 0 0 0 0 1 
+CS.E7 0 0 0 0 1 0 0 0 0 0 1 
+CS.E8 0 0 0 1 0 0 0 0 0 0 1 
+CS.E9 0 0 1 0 0 0 0 0 0 0 1 
+CS.E10 0 1 0 0 0 0 0 0 0 0 1 
+CS.E12 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |ProyectoFinalCasiquenoEsteSi|Maquina:MAQ|CS
+Name CS.E15 CS.E13 CS.E12 CS.E11 CS.E10 CS.E9 CS.E8 CS.E7 CS.E6 CS.E5 CS.E4 CS.E3 CS.PARA_BANDA CS.E2 CS.E_INT CS.E1 
+CS.E1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+CS.E_INT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+CS.E2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+CS.PARA_BANDA 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+CS.E3 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+CS.E4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+CS.E5 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+CS.E6 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+CS.E7 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+CS.E8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+CS.E9 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+CS.E10 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+CS.E11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+CS.E12 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CS.E13 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CS.E15 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

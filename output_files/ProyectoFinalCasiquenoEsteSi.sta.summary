@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'preescalar_reloj:PRES|Q[3]'
+Slack : -4.128
+TNS   : -333.427
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -0.992
+TNS   : -1.013
+
+Type  : Slow 1200mV 85C Model Hold 'preescalar_reloj:PRES|Q[3]'
+Slack : 0.342
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -7.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'preescalar_reloj:PRES|Q[3]'
+Slack : -1.000
+TNS   : -143.000
+
+Type  : Slow 1200mV 0C Model Setup 'preescalar_reloj:PRES|Q[3]'
+Slack : -3.544
+TNS   : -282.860
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -0.804
+TNS   : -0.804
+
+Type  : Slow 1200mV 0C Model Hold 'preescalar_reloj:PRES|Q[3]'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -7.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'preescalar_reloj:PRES|Q[3]'
+Slack : -1.000
+TNS   : -143.000
+
+Type  : Fast 1200mV 0C Model Setup 'preescalar_reloj:PRES|Q[3]'
+Slack : -1.900
+TNS   : -126.853
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.478
+TNS   : -0.478
+
+Type  : Fast 1200mV 0C Model Hold 'preescalar_reloj:PRES|Q[3]'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -7.216
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'preescalar_reloj:PRES|Q[3]'
+Slack : -1.000
+TNS   : -143.000
+
+------------------------------------------------------------
